@@ -873,14 +873,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "ImgUp.cz": {
-    "errorType": "status_code",
-    "rank": 2742294,
-    "url": "https://imgup.cz/{}",
-    "urlMain": "https://imgup.cz/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
   "Instagram": {
     "errorType": "status_code",
     "request_head_only": false,
