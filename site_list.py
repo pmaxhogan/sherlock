@@ -35,7 +35,7 @@ parser.add_argument("--rank","-r",
                     )
 args = parser.parse_args()
 
-with open("data.json", "r", encoding="utf-8") as data_file:
+with open("sherlock/resources/data.json", "r", encoding="utf-8") as data_file:
     data = json.load(data_file)
 
 with open("sites.md", "w") as site_file:
@@ -67,7 +67,7 @@ with open("sites.md", "w") as site_file:
 
 sorted_json_data = json.dumps(data, indent=2, sort_keys=True)
 
-with open("data.json", "w") as data_file:
+with open("sherlock/resources/data.json", "w") as data_file:
     data_file.write(sorted_json_data)
 
 print("\nFinished updating supported site listing!")
