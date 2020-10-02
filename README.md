@@ -3,7 +3,7 @@
   <img src="https://user-images.githubusercontent.com/27065646/53551960-ae4dff80-3b3a-11e9-9075-cef786c69364.png"/>
 
   <br>
-  <span>Hunt down social media accounts by username across <a href="https://github.com/theyahya/sherlock/blob/master/sites.md">social networks</a></span>
+  <span>Hunt down social media accounts by username across <a href="https://github.com/sherlock-project/sherlock/blob/master/sites.md">social networks</a></span>
   <br>
   <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/python-%3E=_3.6-green.svg"></a>
   <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
@@ -15,15 +15,13 @@
 </p>
 
 <p align="center">
-  <a href="#demo">Demo</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#usage">Usage</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#docker-notes">Docker Notes</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#adding-new-sites">Adding New Sites</a>
+  <a href="#contributing">Contributing</a>
 </p>
 
 <p align="center">
@@ -35,35 +33,32 @@
 
 ## Installation
 
-**NOTE**: Python 3.6 or higher is required.
-
-```bash
+```console
 # clone the repo
 $ git clone https://github.com/sherlock-project/sherlock.git
 
 # change the working directory to sherlock
 $ cd sherlock
 
-# install python3 and python3-pip if they are not installed
-
 # install the requirements
 $ python3 -m pip install -r requirements.txt
 ```
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/sherlock-project/sherlock&tutorial=README.md)
+
+[![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/sherlock-project/sherlock&tutorial=README.md) [![Run on Repl.it](https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png)](https://repl.it/github/sherlock-project/sherlock)
 
 ## Usage
 
-```bash
+```console
 $ python3 sherlock --help
-usage: sherlock [-h] [--version] [--verbose] [--rank]
-                [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--tor]
-                [--unique-tor] [--csv] [--site SITE_NAME] [--proxy PROXY_URL]
-                [--json JSON_FILE] [--timeout TIMEOUT] [--print-found]
-                [--no-color] [--browse]
+usage: sherlock [-h] [--version] [--verbose] [--folderoutput FOLDEROUTPUT]
+                [--output OUTPUT] [--tor] [--unique-tor] [--csv]
+                [--site SITE_NAME] [--proxy PROXY_URL] [--json JSON_FILE]
+                [--timeout TIMEOUT] [--print-all] [--print-found] [--no-color]
+                [--browse] [--local]
                 USERNAMES [USERNAMES ...]
 
-Sherlock: Find Usernames Across Social Networks (Version 0.12.2)
+Sherlock: Find Usernames Across Social Networks (Version 0.12.9)
 
 positional arguments:
   USERNAMES             One or more usernames to check with social networks.
@@ -73,8 +68,6 @@ optional arguments:
   --version             Display version information and dependencies.
   --verbose, -v, -d, --debug
                         Display extra debugging information and metrics.
-  --rank, -r            Present websites ordered by their Alexa.com global
-                        rank in popularity.
   --folderoutput FOLDEROUTPUT, -fo FOLDEROUTPUT
                         If using multiple usernames, the output of the results
                         will be saved to this folder.
@@ -96,13 +89,15 @@ optional arguments:
                         Load data from a JSON file or an online, valid, JSON
                         file.
   --timeout TIMEOUT     Time (in seconds) to wait for response to requests.
-                        Default timeout of 60.0s.A longer timeout will be more
-                        likely to get results from slow sites.On the other
-                        hand, this may cause a long delay to gather all
+                        Default timeout is infinity. A longer timeout will be
+                        more likely to get results from slow sites. On the
+                        other hand, this may cause a long delay to gather all
                         results.
-  --print-found         Do not output sites where the username was not found.
+  --print-all           Output sites where the username was not found.
+  --print-found         Output sites where the username was found.
   --no-color            Don't color terminal output
   --browse, -b          Browse to all results on default browser.
+  --local, -l           Force the use of the local data.json file.
 ```
 
 To search for only one user:
@@ -145,7 +140,7 @@ Use the following command to access the saved results:
 docker run --rm -t -v "$PWD/results:/opt/sherlock/results" mysherlock-image -o /opt/sherlock/results/text.txt user123
 ```
 
-The ```-v "$PWD/results:/opt/sherlock/results"``` option tells docker to create (or use) the folder `results` in the
+The ```-v "$PWD/results:/opt/sherlock/results"``` options tell docker to create (or use) the folder `results` in the
 present working directory and to mount it at `/opt/sherlock/results` on the docker container.
 The `-o /opt/sherlock/results/text.txt` option tells `sherlock` to output the result.
 
@@ -162,13 +157,16 @@ You can use the `docker-compose.yml` file from the repository and use this comma
 docker-compose run sherlock -o /opt/sherlock/results/text.txt user123
 ```
 
-## Adding New Sites
+## Contributing
+We would love to have you help us with the development of Sherlock. Each and every contribution is greatly valued!
 
-Please look at the Wiki entry on
-[adding new sites](https://github.com/TheYahya/sherlock/wiki/Adding-Sites-To-Sherlock)
+Here are some things we would appreciate your help on:
+- Addition of new site support ¹
+- Bringing back site support of [sites that have been removed](removed_sites.md) in the past due to false positives
+
+
+[1] Please look at the Wiki entry on [adding new sites](https://github.com/sherlock-project/sherlock/wiki/Adding-Sites-To-Sherlock)
 to understand the issues.
-
-**NOTE**: Sherlock is not accepting adult sites in the standard list.
 
 ## Tests
 

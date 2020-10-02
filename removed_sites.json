@@ -1,12 +1,4 @@
 {
-  "9GAG": {
-    "errorType": "status_code",
-    "rank": 389,
-    "url": "https://9gag.com/u/{}",
-    "urlMain": "https://9gag.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "AdobeForums": {
     "errorType": "status_code",
     "rank": 59,
@@ -18,7 +10,7 @@
   "AngelList": {
     "errorType": "status_code",
     "rank": 5767,
-    "url": "https://angel.co/{}",
+    "url": "https://angel.co/u/{}",
     "urlMain": "https://angel.co/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
@@ -38,15 +30,6 @@
     "rank": 110021,
     "url": "http://blackplanet.com/{}",
     "urlMain": "http://blackplanet.com/"
-  },
-  "CapFriendly": {
-    "errorMsg": "No User Found",
-    "errorType": "message",
-    "rank": 64100,
-    "url": "https://www.capfriendly.com/users/{}",
-    "urlMain": "https://www.capfriendly.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
   },
   "Canva": {
     "errorType": "response_url",
@@ -163,23 +146,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
-  "linkedin.com": {
-    "errorMsg": "This profile is not available",
+  "Linkedin": {
+    "errorMsg": "could not be found",
     "errorType": "message",
     "rank": 0,
     "url": "https://www.linkedin.com/in/{}",
     "urlMain": "https://www.linkedin.com/",
     "username_claimed": "alex",
     "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "PayPal": {
-    "errorType": "response_url",
-    "errorUrl": "https://www.paypal.com/paypalme2/404",
-    "rank": 18441,
-    "url": "https://www.paypal.com/paypalme2/{}",
-    "urlMain": "https://www.paypal.me/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noneownsthisusername"
   },
   "Pexels": {
     "errorType": "status_code",
@@ -249,14 +223,6 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "TikTok": {
-    "errorType": "status_code",
-    "rank": 260,
-    "url": "https://www.tiktok.com/@{}",
-    "urlMain": "https://www.tiktok.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "YandexMarket": {
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorType": "message",
@@ -299,15 +265,6 @@
      "urlMain": "https://boingboing.net/",
      "username_claimed": "admin",
      "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Telegram": {
-     "errorType": "response_url",
-     "errorUrl": "https://telegram.org",
-     "rank": 385,
-     "url": "https://t.me/{}",
-     "urlMain": "https://t.me/",
-     "username_claimed": "saman",
-     "username_unclaimed": "i_do_not_believe_this_account_exists_at_all"
   },
   "elwoRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
@@ -422,6 +379,116 @@
     "rank": 181933,
     "url": "https://api.kano.me/progress/user/{}",
     "urlMain": "https://world.kano.me/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "YandexCollection": {
+    "errorType": "status_code",
+    "url": "https://yandex.ru/collections/user/{}/",
+    "urlMain": "https://yandex.ru/collections/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "500px": {
+    "errorMsg": "Oops! This page doesn\u2019t exist.",
+    "errorType": "message",
+    "regexCheck": "^[a-z0-9_]+$",
+    "url": "https://500px.com/{}",
+    "urlMain": "https://500px.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "PayPal": {
+    "errorMsg": "<meta name=\"twitter:title\" content=\"Get your very own PayPal.Me link\" />",
+    "errorType": "message",
+    "url": "https://www.paypal.com/paypalme/{}",
+    "headers": {
+      "User-Agent": ""
+    },
+    "urlMain": "https://www.paypal.me/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noneownsthisusername7"
+  },
+  "Fiverr": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.fiverr.com/",
+    "url": "https://www.fiverr.com/{}",
+    "urlMain": "https://www.fiverr.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+  "ImageShack": {
+    "errorType": "response_url",
+    "errorUrl": "https://imageshack.us/",
+    "url": "https://imageshack.us/user/{}",
+    "urlMain": "https://imageshack.us/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Aptoide": {
+    "errorType": "status_code",
+    "url": "https://{}.en.aptoide.com/",
+    "urlMain": "https://en.aptoide.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Crunchyroll": {
+    "errorType": "status_code",
+    "url": "https://www.crunchyroll.com/user/{}",
+    "urlMain": "https://www.crunchyroll.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "T-MobileSupport": {
+    "errorType": "status_code",
+    "url": "https://support.t-mobile.com/people/{}",
+    "urlMain": "https://support.t-mobile.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "OpenCollective": {
+    "errorType": "status_code",
+    "url": "https://opencollective.com/{}",
+    "urlMain": "https://opencollective.com/",
+    "username_claimed": "sindresorhus",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "SegmentFault": {
+    "errorType": "status_code",
+    "url": "https://segmentfault.com/u/{}",
+    "urlMain": "https://segmentfault.com/",
+    "username_claimed": "bule",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Viadeo": {
+    "errorType": "status_code",
+    "url": "http://fr.viadeo.com/en/profile/{}",
+    "urlMain": "http://fr.viadeo.com/en/",
+    "username_claimed": "franck.patissier",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+  "MeetMe": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.meetme.com/",
+    "url": "https://www.meetme.com/{}",
+    "urlMain": "https://www.meetme.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "tracr.co": {
+    "errorMsg": "No search results",
+    "errorType": "message",
+    "regexCheck": "^[A-Za-z0-9]{2,32}$",
+    "url": "https://tracr.co/users/1/{}",
+    "urlMain": "https://tracr.co/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Taringa": {
+    "errorType": "status_code",
+    "regexCheck": "^[^.]*$",
+    "url": "https://www.taringa.net/{}",
+    "urlMain": "https://taringa.net/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   }

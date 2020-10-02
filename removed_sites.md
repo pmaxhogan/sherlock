@@ -41,20 +41,7 @@ turned on.
     "username_unclaimed": "noonewouldeverusethis7"
   },
 ```
-## 9GAG
 
-As of 2020-05-25, all usernames are reported as available.
-
-```
-  "9GAG": {
-    "errorType": "status_code",
-    "rank": 389,
-    "url": "https://9gag.com/u/{}",
-    "urlMain": "https://9gag.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
 
 ## Investing.com
 
@@ -74,22 +61,6 @@ required login before access.
     "username_unclaimed": "noonewouldeverusethis7"
   },
 ```
-
-## TikTok
-
-As of 2020-05-25, all usernames are reported as claimed.
-
-```
-  "TikTok": {
-    "errorType": "status_code",
-    "rank": 260,
-    "url": "https://www.tiktok.com/@{}",
-    "urlMain": "https://www.tiktok.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
 ## ColourLovers
 
 As of 2020-05-24, all usernames are reported as claimed.
@@ -136,7 +107,6 @@ This can be detected, but it requires a different detection method.
 
 As of 2020-02-23, all usernames are reported as not existing.
 
-Why was this ever added?  It does not look like a social network.
 
 ```
   "Basecamp": {
@@ -339,21 +309,6 @@ Usernames that don't exist are detected.  First noticed 2019-10-25.
   },
 ```
 
-## PayPal
-
-Usernames that don't exist are detected.
-
-```
-  "PayPal": {
-    "errorType": "response_url",
-    "errorUrl": "https://www.paypal.com/paypalme2/404",
-    "rank": 18441,
-    "url": "https://www.paypal.com/paypalme2/{}",
-    "urlMain": "https://www.paypal.me/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noneownsthisusername"
-  },
-```
 
 ## EVE Online
 
@@ -373,13 +328,13 @@ Usernames that exist are not detected.
 
 ## AngelList
 
-Usernames that exist are not detected.
+Usernames that exist are not detected. Forbidden Request 403 Error.
 
 ```
   "AngelList": {
     "errorType": "status_code",
     "rank": 5767,
-    "url": "https://angel.co/{}",
+    "url": "https://angel.co/u/{}",
     "urlMain": "https://angel.co/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
@@ -514,22 +469,6 @@ Good-bye [Google Plus](https://en.wikipedia.org/wiki/Google%2B)...
   },
 ```
 
-## CapFriendly
-
-As of 2020-02-17, CapFriendly returns fake profile pages for non-existing users, what seems to distinguish between the pages is the Sign-up date, for non-existing users, the web application returns a date before 2000-01-01.
-
-```
-  "CapFriendly": {
-    "errorMsg": "No User Found",
-    "errorType": "message",
-    "rank": 64100,
-    "url": "https://www.capfriendly.com/users/{}",
-    "urlMain": "https://www.capfriendly.com/",
-    "username_claimed": "user",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
-```
-
 
 ## Furaffinity
 
@@ -614,21 +553,6 @@ As of 2020-04-02, boingboing.net requires a login to check if a user exits or no
      "username_unclaimed": "noonewouldeverusethis7"
    },
 ```
-
-## Telegram
-As of 2020-04-02 Telegram always returns true even though an username is non-existant
-
-´´´
-   "Telegram": {
-     "errorType": "response_url",
-     "errorUrl": "https://telegram.org",
-     "rank": 385,
-     "url": "https://t.me/{}",
-     "urlMain": "https://t.me/",
-     "username_claimed": "saman",
-     "username_unclaimed": "i_do_not_believe_this_account_exists_at_all"
-  },
-´´´
 
 ## elwoRU
 As of 2020-04-04, elwoRu does not exist anymore. I confirmed using
@@ -837,6 +761,224 @@ If an alternative way to check for usernames is found then it will added.
     "rank": 181933,
     "url": "https://api.kano.me/progress/user/{}",
     "urlMain": "https://world.kano.me/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## YandexCollection
+As of 2020-08-11, YandexCollection presents us with a rechapta which prevents us from checking for usernames
+```
+  "YandexCollection": {
+    "errorType": "status_code",
+    "url": "https://yandex.ru/collections/user/{}/",
+    "urlMain": "https://yandex.ru/collections/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## 500px
+
+As of 2020-08-24, 500px now returns false positives, which was found when running the tests, but will most likley be added again in the near
+future once we find a better error detecting method.
+```
+  "500px": {
+    "errorMsg": "Oops! This page doesn\u2019t exist.",
+    "errorType": "message",
+    "regexCheck": "^[a-z0-9_]+$",
+    "url": "https://500px.com/{}",
+    "urlMain": "https://500px.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## PayPal
+
+As of 2020-08-24, PayPal now returns false positives, which was found when running the tests, but will most likley be added again in the near
+future once we find a better error detecting method.
+```
+  "PayPal": {
+    "errorMsg": "<meta name=\"twitter:title\" content=\"Get your very own PayPal.Me link\" />",
+    "errorType": "message",
+    "url": "https://www.paypal.com/paypalme/{}",
+    "headers": {
+      "User-Agent": ""
+    },
+    "urlMain": "https://www.paypal.me/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noneownsthisusername7"
+  },
+```
+
+## Fiverr
+
+As of 2020-08-24, Fiverr now returns false positives, which was found when running the tests, but will most likley be added again in the near
+future once we find a better error detecting method.
+```
+  "Fiverr": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.fiverr.com/",
+    "url": "https://www.fiverr.com/{}",
+    "urlMain": "https://www.fiverr.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+```
+
+## ImageShack
+
+As of 2020-08-24, ImageShack now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a better error detecting method.
+```
+  "ImageShack": {
+    "errorType": "response_url",
+    "errorUrl": "https://imageshack.us/",
+    "url": "https://imageshack.us/user/{}",
+    "urlMain": "https://imageshack.us/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Aptoide
+
+As of 2020-08-24, Aptoide now returns false positives, which was found when running the tests, but will most likley be added again in the near
+future once we find a better error detecting method.
+```
+  "Aptoide": {
+    "errorType": "status_code",
+    "url": "https://{}.en.aptoide.com/",
+    "urlMain": "https://en.aptoide.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Crunchyroll
+
+As of 2020-08-24, Crunchyroll now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a better error detecting method.
+
+```
+  "Crunchyroll": {
+    "errorType": "status_code",
+    "url": "https://www.crunchyroll.com/user/{}",
+    "urlMain": "https://www.crunchyroll.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## T-MobileSupport
+As of 2020-08-24, T-MobileSupport now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a better error detecting method.
+
+```
+  "T-MobileSupport": {
+    "errorType": "status_code",
+    "url": "https://support.t-mobile.com/people/{}",
+    "urlMain": "https://support.t-mobile.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## OpenCollective
+
+As of 2020-08-24, OpenCollective now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a better error detecting method.
+
+```
+  "OpenCollective": {
+    "errorType": "status_code",
+    "url": "https://opencollective.com/{}",
+    "urlMain": "https://opencollective.com/",
+    "username_claimed": "sindresorhus",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## SegmentFault
+
+As of 2020-08-24, SegmentFault now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a better error detecting method.
+
+```
+  "SegmentFault": {
+    "errorType": "status_code",
+    "url": "https://segmentfault.com/u/{}",
+    "urlMain": "https://segmentfault.com/",
+    "username_claimed": "bule",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Viadeo
+
+As of 2020-08-24, Viadeo now returns false positives, which was found when running the tests, but will most likley be added again in the near future once we find a fix for this
+
+```
+  "Viadeo": {
+    "errorType": "status_code",
+    "url": "http://fr.viadeo.com/en/profile/{}",
+    "urlMain": "http://fr.viadeo.com/en/",
+    "username_claimed": "franck.patissier",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+```
+
+## MeetMe
+
+As of 2020-09-02, MeetMe returns false positives
+
+```
+  "MeetMe": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.meetme.com/",
+    "url": "https://www.meetme.com/{}",
+    "urlMain": "https://www.meetme.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Linkdedin
+
+As of 2020-09-23, Linkedin returns false positives because we are prompted with prompted to login when checking for a user
+
+```
+  "Linkedin": {
+    "errorMsg": "could not be found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.linkedin.com/in/{}",
+    "urlMain": "https://www.linkedin.com/",
+    "username_claimed": "alex",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## tracr.co
+As of 2020-09-23, tracr.co returns false positives because the site seems to be shut down.
+```
+  "tracr.co": {
+    "errorMsg": "No search results",
+    "errorType": "message",
+    "regexCheck": "^[A-Za-z0-9]{2,32}$",
+    "url": "https://tracr.co/users/1/{}",
+    "urlMain": "https://tracr.co/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  }
+```
+
+## Taringa
+
+As of 2020-09-23, Taringa returns false positives.
+
+```
+  "Taringa": {
+    "errorType": "status_code",
+    "regexCheck": "^[^.]*$",
+    "url": "https://www.taringa.net/{}",
+    "urlMain": "https://taringa.net/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
