@@ -24,24 +24,6 @@ for all queries.
   },
 ```
 
-## Raidforums
-
-As of 2020-05-25, all usernames are reported as claimed.
-The site will not let the query proceed unless Javascript is
-turned on.
-
-```
-  "Raidforums": {
-    "errorMsg": "The member you specified is either invalid or doesn't exist.",
-    "errorType": "message",
-    "rank": 32435,
-    "url": "https://raidforums.com/User-{}",
-    "urlMain": "https://raidforums.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
 
 ## Investing.com
 
@@ -58,24 +40,6 @@ required login before access.
     "url": "https://www.investing.com/traders/{}",
     "urlMain": "https://www.investing.com/",
     "username_claimed": "jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-## ColourLovers
-
-As of 2020-05-24, all usernames are reported as claimed.
-
-There is an API available (https://www.colourlovers.com/api/), but when
-there is no match it returns an empty file.  So, changes would have to
-happen before the lack of a response could be used to detect.
-
-```
-  "ColourLovers": {
-    "errorType": "status_code",
-    "rank": 21271,
-    "url": "https://www.colourlovers.com/lover/{}",
-    "urlMain": "https://www.colourlovers.com/",
-    "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
 ```
@@ -162,6 +126,20 @@ As of 2020-01-21, all usernames are reported as not existing.
     "rank": 378,
     "url": "https://pixabay.com/en/users/{}",
     "urlMain": "https://pixabay.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## NPM-Packages
+
+NPM-Packages are not users.
+
+```
+  "NPM-Package": {
+    "errorType": "status_code",
+    "url": "https://www.npmjs.com/package/{}",
+    "urlMain": "https://www.npmjs.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -281,7 +259,11 @@ HTTP Status.
 
 ## Foursquare
 
-Usernames that exist are not detected.
+When usage of automated tool is detected. Whole IP is banned from future requests.
+There is an error message:
+
+> Please verify you are a human
+> Access to this page has been denied because we believe you are using automation tools to browse the website.
 
 ```
   "Foursquare": {
@@ -336,37 +318,6 @@ Usernames that exist are not detected. Forbidden Request 403 Error.
     "rank": 5767,
     "url": "https://angel.co/u/{}",
     "urlMain": "https://angel.co/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## Codepen
-
-Usernames that exist are not detected.
-
-```
-  "Codepen": {
-    "errorType": "status_code",
-    "rank": 1359,
-    "url": "https://codepen.io/{}",
-    "urlMain": "https://codepen.io/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
-## Imgur
-
-Looks like they made some changes to the site.  Sherlock says that all
-usernames are available.
-
-```
-  "Imgur": {
-    "errorType": "status_code",
-    "rank": 74,
-    "url": "https://imgur.com/user/{}",
-    "urlMain": "https://imgur.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -778,22 +729,6 @@ As of 2020-08-11, YandexCollection presents us with a rechapta which prevents us
   },
 ```
 
-## 500px
-
-As of 2020-08-24, 500px now returns false positives, which was found when running the tests, but will most likley be added again in the near
-future once we find a better error detecting method.
-```
-  "500px": {
-    "errorMsg": "Oops! This page doesn\u2019t exist.",
-    "errorType": "message",
-    "regexCheck": "^[a-z0-9_]+$",
-    "url": "https://500px.com/{}",
-    "urlMain": "https://500px.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-```
-
 ## PayPal
 
 As of 2020-08-24, PayPal now returns false positives, which was found when running the tests, but will most likley be added again in the near
@@ -979,6 +914,157 @@ As of 2020-09-23, Taringa returns false positives.
     "regexCheck": "^[^.]*$",
     "url": "https://www.taringa.net/{}",
     "urlMain": "https://taringa.net/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Photobucket
+As of 2020-10-21, Photobucket return false positives. This was reported in #785.
+```
+  "Photobucket": {
+    "errorType": "status_code",
+    "url": "https://photobucket.com/user/{}/library",
+    "urlMain": "https://photobucket.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## 4PDA
+As of 2020-10-21, 4PDA returns false positives. This was reported in #784.
+
+```
+  "4pda": {
+    "errorMsg": "[1,false,0]",
+    "errorType": "message",
+    "url": "https://4pda.ru/forum/index.php?act=search&source=pst&noform=1&username={}",
+    "urlMain": "https://4pda.ru/",
+    "urlProbe": " https://4pda.ru/forum/index.php?act=auth&action=chkname&login={}",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## PokerStrategy
+As of 2020-10-21, PokerStrategy returns false positives. This was reported in #776.
+```
+  "PokerStrategy": {
+    "errorType": "status_code",
+    "url": "http://www.pokerstrategy.net/user/{}/profile/",
+    "urlMain": "http://www.pokerstrategy.net",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Filmogs
+
+Filmogs has closed down.
+
+> **Filmogs is closed**
+> **31-Aug 2020** - We are preparing the last data export and collection of images. It will be published here by 19-Oct 2020. If you have requested an export of your data it will also be emailed to you by 19-Oct 2020.
+
+```
+  "Filmogs": {
+    "errorType": "status_code",
+    "url": "https://www.filmo.gs/users/{}",
+    "urlMain": "https://www.filmo.gs/",
+    "username_claimed": "cupparober",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## 500px
+As of 2021-01-13, 500px returns false positives. This will hopefully be fixed soon once we add the ability to add different
+request methods.
+
+```
+  "500px": {
+    "errorMsg": "No message available",
+    "errorType": "message",
+    "url": "https://500px.com/p/{}",
+    "urlMain": "https://500px.com/",
+    "urlProbe": "https://api.500px.com/graphql?operationName=ProfileRendererQuery&variables=%7B%22username%22%3A%22{}%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%224d02ff5c13927a3ac73b3eef306490508bc765956940c31051468cf30402a503%22%7D%7D",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Badoo
+As of 2021-01-13, Badoo returns false positives
+```
+  "Badoo": {
+    "errorType": "status_code",
+    "url": "https://badoo.com/profile/{}",
+    "urlMain": "https://badoo.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Instagram
+As of 2021-01-13, Instagram returns false positives. This can be fixed by using their username checking API endpoint, but that requires a POST request which Sherlock currently does not support. 
+
+```
+  "Instagram": {
+    "errorMsg": "href=\"/static/bundles/metro/HttpErrorPage.js/",
+    "errorType": "message",
+    "url": "https://www.instagram.com/{}",
+    "urlMain": "https://www.instagram.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Pling
+As of 2021-01-13, Pling returns false positives.
+```
+  "Pling": {
+    "errorMsg": "Resource not found",
+    "errorType": "message",
+    "url": "https://www.pling.com/u/{}/",
+    "urlMain": "https://www.pling.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+```
+
+## Realmeye
+As of 2021-01-13, Realmeye returns false positives.
+```
+  "Realmeye": {
+    "errorMsg": "Sorry, but we either:",
+    "errorType": "message",
+    "url": "https://www.realmeye.com/player/{}",
+    "urlMain": "https://www.realmeye.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Travellerspoint
+As of 2021-01-13, Travellerspoint returns false positives
+```
+  "Travellerspoint": {
+    "errorMsg": "Wooops. Sorry!",
+    "errorType": "message",
+    "url": "https://www.travellerspoint.com/users/{}",
+    "urlMain": "https://www.travellerspoint.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Ebay
+
+As of 2021-01-15, Ebay seems to be very laggy and take too long to return a response.
+```
+  "Ebay": {
+    "errorMsg": "<title>eBay Profile - error</title>",
+    "errorType": "message",
+    "url": "https://www.ebay.com/usr/{}",
+    "urlMain": "https://www.ebay.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
